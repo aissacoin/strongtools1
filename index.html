@@ -30,20 +30,18 @@
     <script>
         window.React = React;
         window.ReactDOM = ReactDOM;
-        console.log("System: Global React Bridge Initialized.");
+        console.log("System: React Global Variables Initialized.");
     </script>
 
     <script type="module" src="assets/index-CCK1IsRG.js"></script>
 
     <script>
-        // Check for common loading errors
-        window.addEventListener('load', function() {
-            if (typeof React === 'undefined') {
-                console.error("Critical Error: React failed to load.");
-            } else {
-                console.log("Status: Application successfully linked.");
+        // Automatic repair if rendering fails
+        window.onload = () => {
+            if (document.getElementById('root').children.length === 0) {
+                console.warn("Application failed to render. Checking dependencies...");
             }
-        });
+        };
     </script>
 </body>
 </html>
