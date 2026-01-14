@@ -12,10 +12,11 @@
     <script type="importmap">
     {
       "imports": {
-        "react": "https://esm.sh/react@19.0.0?bundle",
-        "react-dom": "https://esm.sh/react-dom@19.0.0?bundle",
-        "react-dom/client": "https://esm.sh/react-dom@19.0.0/client?bundle",
-        "react/jsx-runtime": "https://esm.sh/react@19.0.0/jsx-runtime?bundle"
+        "react": "https://esm.sh/react@18.2.0?bundle",
+        "react-dom": "https://esm.sh/react-dom@18.2.0?bundle",
+        "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?bundle",
+        "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime?bundle",
+        "lucide-react": "https://esm.sh/lucide-react@0.460.0?bundle"
       }
     }
     </script>
@@ -27,8 +28,9 @@
             background-color: #050505; 
             color: white; 
             margin: 0; 
-            min-height: 100vh; 
-            font-family: system-ui, sans-serif; 
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, sans-serif;
+            display: block !important;
         }
         #root { min-height: 100vh; width: 100%; }
     </style>
@@ -39,7 +41,7 @@
     <script type="module" src="assets/index-CCK1IsRG.js"></script>
 
     <script>
-        console.log("System: Connecting to StrongTools Engine via ESM Bridge...");
+        console.log("System: Connecting to StrongTools Engine (Unified Bundle Mode)...");
     </script>
 </body>
 </html>
