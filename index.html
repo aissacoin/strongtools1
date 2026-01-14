@@ -7,8 +7,8 @@
     
     <base href="/strongtools1/">
 
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -19,6 +19,7 @@
             margin: 0; 
             min-height: 100vh;
             font-family: system-ui, -apple-system, sans-serif;
+            display: block !important;
         }
         #root { min-height: 100vh; width: 100%; }
     </style>
@@ -29,16 +30,18 @@
     <script>
         window.React = React;
         window.ReactDOM = ReactDOM;
-        console.log("System: Global React injection successful.");
+        console.log("System: React Engine injected globally.");
     </script>
 
     <script type="module" src="assets/index-CCK1IsRG.js"></script>
 
     <script>
-        // Diagnostic check
+        // Final sanity check
         window.addEventListener('load', () => {
             if (typeof React === 'undefined') {
-                console.error("Critical: React injection failed.");
+                console.error("Critical: React is still missing!");
+            } else {
+                console.log("Success: StrongTools initialization complete.");
             }
         });
     </script>
