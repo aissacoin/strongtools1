@@ -29,13 +29,14 @@
     <script type="module" src="./assets/index-CCK1IsRG.js"></script>
 
     <script>
-        // Diagnostic Check
-        console.log("Checking React Status...");
-        if (typeof React !== 'undefined') {
-            console.log("✅ React is successfully defined globally!");
-        } else {
-            console.error("❌ React is still missing. Trying fallback...");
-        }
+        // فحص حالة المكتبات في الـ Console
+        window.onload = function() {
+            if (typeof React !== 'undefined') {
+                console.log("✅ React Loaded Successfully");
+            } else {
+                console.error("❌ React is still not defined!");
+            }
+        };
     </script>
 </body>
 </html>
