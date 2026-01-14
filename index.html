@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StrongTools | Premium Digital Utility Archive</title>
     
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.10.1/dist/es-module-shims.js"></script>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18.2.0",
+        "react-dom": "https://esm.sh/react-dom@18.2.0",
+        "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+        "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
+        "lucide-react": "https://esm.sh/lucide-react@0.460.0"
+      }
+    }
+    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -29,14 +38,8 @@
     <script type="module" src="./assets/index-CCK1IsRG.js"></script>
 
     <script>
-        // فحص حالة المكتبات في الـ Console
-        window.onload = function() {
-            if (typeof React !== 'undefined') {
-                console.log("✅ React Loaded Successfully");
-            } else {
-                console.error("❌ React is still not defined!");
-            }
-        };
+        // Clean Console Log
+        console.log("System: Re-initializing with Unified React 18...");
     </script>
 </body>
 </html>
