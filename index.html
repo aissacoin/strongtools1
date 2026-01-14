@@ -7,23 +7,8 @@
     
     <base href="/strongtools1/">
 
-    <script type="importmap">
-      {
-        "imports": {
-          "react": "https://esm.sh/react@19.0.0",
-          "react-dom": "https://esm.sh/react-dom@19.0.0",
-          "react-dom/client": "https://esm.sh/react-dom@19.0.0/client"
-        }
-      }
-    </script>
-
-    <script type="module">
-        import React from 'react';
-        import ReactDOM from 'react-dom';
-        window.React = React;
-        window.ReactDOM = ReactDOM;
-        console.log("System: React 19 global context initialized.");
-    </script>
+    <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -34,6 +19,7 @@
             margin: 0; 
             min-height: 100vh;
             font-family: system-ui, -apple-system, sans-serif;
+            display: block !important;
         }
         #root { min-height: 100vh; width: 100%; }
     </style>
@@ -41,13 +27,23 @@
 <body>
     <div id="root"></div>
 
+    <script>
+        // Manually attaching to window to satisfy the reference error in index-CCK1IsRG.js:8409
+        window.React = React;
+        window.ReactDOM = ReactDOM;
+        console.log("System Status: React 18 Global Scope Initialized.");
+    </script>
+
     <script type="module" src="assets/index-CCK1IsRG.js"></script>
 
     <script>
-        // Diagnostic Listener
-        window.onerror = function(msg, url, line) {
-            console.log("Error caught: " + msg + " at " + url + ":" + line);
-            return false;
+        // Final Diagnostic Check
+        window.onload = () => {
+            if (typeof React === 'undefined') {
+                console.error("Critical: Global React bridge failed.");
+            } else {
+                console.log("System Status: Engine Link Established.");
+            }
         };
     </script>
 </body>
