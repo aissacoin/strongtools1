@@ -28,23 +28,22 @@
     <div id="root"></div>
 
     <script>
-        // Manually attaching to window to satisfy the reference error in index-CCK1IsRG.js:8409
         window.React = React;
         window.ReactDOM = ReactDOM;
-        console.log("System Status: React 18 Global Scope Initialized.");
+        console.log("System: Global React Bridge Initialized.");
     </script>
 
     <script type="module" src="assets/index-CCK1IsRG.js"></script>
 
     <script>
-        // Final Diagnostic Check
-        window.onload = () => {
+        // Check for common loading errors
+        window.addEventListener('load', function() {
             if (typeof React === 'undefined') {
-                console.error("Critical: Global React bridge failed.");
+                console.error("Critical Error: React failed to load.");
             } else {
-                console.log("System Status: Engine Link Established.");
+                console.log("Status: Application successfully linked.");
             }
-        };
+        });
     </script>
 </body>
 </html>
