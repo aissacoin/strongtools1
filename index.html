@@ -7,24 +7,24 @@
     
     <base href="/strongtools1/">
 
-    <script src="https://unpkg.com/react@19/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@19/umd/react-dom.production.min.js"></script>
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.10.1/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19.0.0?bundle",
+        "react-dom": "https://esm.sh/react-dom@19.0.0?bundle",
+        "react-dom/client": "https://esm.sh/react-dom@19.0.0/client?bundle",
+        "react/jsx-runtime": "https://esm.sh/react@19.0.0/jsx-runtime?bundle",
+        "lucide-react": "https://esm.sh/lucide-react@0.460.0?bundle"
+      }
+    }
+    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
-        body { 
-            background-color: #050505; 
-            color: white; 
-            margin: 0; 
-            min-height: 100vh;
-            font-family: system-ui, -apple-system, sans-serif;
-            display: block !important;
-        }
-        #root { 
-            min-height: 100vh; 
-            width: 100%; 
-        }
+        body { background-color: #050505; color: white; margin: 0; min-height: 100vh; font-family: system-ui, sans-serif; }
+        #root { min-height: 100vh; width: 100%; }
     </style>
 </head>
 <body>
@@ -33,13 +33,7 @@
     <script type="module" src="assets/index-CCK1IsRG.js"></script>
 
     <script>
-        // System diagnostic log
-        window.addEventListener('load', () => {
-            console.log("System Status: React 19 Core loaded.");
-            if (typeof React === 'undefined') {
-                console.error("Critical Error: React not detected!");
-            }
-        });
+        console.log("System: Initializing StrongTools Archive with React 19...");
     </script>
 </body>
 </html>
