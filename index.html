@@ -7,8 +7,18 @@
     
     <base href="/strongtools1/">
 
-    <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.10.1/dist/es-module-shims.js"></script>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19.0.0?bundle",
+        "react-dom": "https://esm.sh/react-dom@19.0.0?bundle",
+        "react-dom/client": "https://esm.sh/react-dom@19.0.0/client?bundle",
+        "react/jsx-runtime": "https://esm.sh/react@19.0.0/jsx-runtime?bundle"
+      }
+    }
+    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -26,23 +36,10 @@
 <body>
     <div id="root"></div>
 
-    <script>
-        if (typeof React !== 'undefined') {
-            window.React = React;
-            window.ReactDOM = ReactDOM;
-            console.log("System: Global React defined successfully.");
-        }
-    </script>
-
     <script type="module" src="assets/index-CCK1IsRG.js"></script>
 
     <script>
-        window.addEventListener('error', function(e) {
-            if (e.message.includes('React is not defined')) {
-                console.warn("Retrying script execution...");
-                location.reload();
-            }
-        });
+        console.log("System: Connecting to StrongTools Engine via ESM Bridge...");
     </script>
 </body>
 </html>
